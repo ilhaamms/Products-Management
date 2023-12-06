@@ -31,8 +31,19 @@
         color: #fff !important;
       }
 
-      .list-products-container {
+      .container {
+        border-radius: 8px;
+        padding: 5px;
+      }
+
+      .container-list {
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         margin-top: 20px;
+        padding: 15px;
+        width: 85%;
+        margin: auto;
       }
 
       h2 {
@@ -66,7 +77,6 @@
       }
     </style>
   </head>
-
   <body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg">
@@ -102,10 +112,8 @@
         </div>
       </div>
     </nav>
-    <!-- End of Navbar -->
 
-    <!-- List Products Container -->
-    <div class="container list-products-container">
+    <div class="container-list mt-3">
       <h2>List Products</h2>
       <hr />
       <a href="/products/add" class="btn btn-primary">Add Product</a>
@@ -119,35 +127,34 @@
           </tr>
         </thead>
         <tbody>
-          <!-- Your range loop for products goes here -->
+          {{range .products}}
           <tr>
-            <td>Product Name</td>
-            <td>Category Name</td>
-            <td>10</td>
+            <td>{{.Name}}</td>
+            <td>{{.Category.Name}}</td>
+            <td>{{.Stock}}</td>
             <td>
               <a
-                href="/products/detail?id=1"
+                href="/products/detail?id={{.Id}}"
                 class="btn btn-sm btn-info text-light"
                 >Detail</a
               >
               <a
-                href="/products/edit?id=1"
+                href="/products/edit?id={{.Id}}"
                 class="btn btn-sm btn-warning text-light"
                 >Edit</a
               >
               <a
-                href="/products/delete?id=1"
+                href="/products/delete?id={{.Id}}"
                 onclick="return confirm('Are you sure want to delete this product ?')"
                 class="btn btn-sm btn-danger"
                 >Delete</a
               >
             </td>
           </tr>
-          <!-- End of range loop -->
+          {{end}}
         </tbody>
       </table>
     </div>
-    <!-- End of List Products Container -->
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"

@@ -48,56 +48,66 @@
     </nav>
     <!-- End of Navbar -->
 
-    <div class="container mt-3">
-      <div class="row d-flex justify-content-center">
-        <div class="col-4">
-          <h2>Detail Product</h2>
-          <hr />
+    <div class="container mt-5">
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <div class="card shadow p-3 mb-5 bg-white rounded">
+            <div class="card-body">
+              <h2 class="card-title text-center mb-4">Product Details</h2>
+              <hr />
 
-          <form action="/products/add" method="POST">
-            <div class="mb-3">
-              <label class="form-label">Name</label>
-              <input
-                type="text"
-                class="form-control"
-                value="{{ .product.Name}}"
-                disabled
-              />
+              <form action="/products/add" method="POST">
+                <div class="mb-3">
+                  <label for="productName" class="form-label">Name</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="productName"
+                    value="{{ .product.Name }}"
+                    disabled
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="productCategory" class="form-label"
+                    >Category</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="productCategory"
+                    value="{{ .product.Category.Name }}"
+                    disabled
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="productStock" class="form-label">Stock</label>
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="productStock"
+                    value="{{ .product.Stock }}"
+                    disabled
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="productDescription" class="form-label"
+                    >Description</label
+                  >
+                  <textarea
+                    class="form-control"
+                    id="productDescription"
+                    rows="3"
+                    disabled
+                  >
+{{ .product.Description }}</textarea
+                  >
+                </div>
+                <div class="d-flex justify-content-end">
+                  <a href="/products" class="btn btn-secondary">Back</a>
+                </div>
+              </form>
             </div>
-            <div class="mb-3">
-              <label class="form-label">Category</label>
-              <input
-                type="text"
-                class="form-control"
-                value="{{ .product.Category.Name}}"
-                disabled
-              />
-            </div>
-            <div class="mb-3">
-              <label class="form-label">Stock</label>
-              <input
-                type="number"
-                class="form-control"
-                name="stock"
-                value="{{ .product.Stock}}"
-                disabled
-              />
-            </div>
-            <div class="mb-3">
-              <label class="form-label">Description</label>
-              <textarea
-                class="form-control"
-                name="description"
-                rows="3"
-                disabled
-              >
-{{.product.Description}}</textarea
-              >
-            </div>
-            <div class="float-end">
-              <a href="/products" class="btn btn-secondary">Back</a>
-            </div>
-          </form>
+          </div>
         </div>
       </div>
     </div>

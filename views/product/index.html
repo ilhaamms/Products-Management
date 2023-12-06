@@ -10,10 +10,66 @@
       integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
       crossorigin="anonymous"
     />
+    <style>
+      body {
+        background-color: #f8f9fa;
+      }
+
+      .navbar {
+        background-color: #343a40;
+      }
+
+      .navbar-brand {
+        font-size: 1.5rem;
+      }
+
+      .navbar-toggler-icon {
+        background-color: #fff;
+      }
+
+      .navbar-nav .nav-link {
+        color: #fff !important;
+      }
+
+      .list-products-container {
+        margin-top: 20px;
+      }
+
+      h2 {
+        color: #007bff;
+      }
+
+      table {
+        border: 1px solid #dee2e6;
+        margin-top: 20px;
+      }
+
+      th,
+      td {
+        padding: 12px;
+      }
+
+      .btn-primary {
+        background-color: #007bff;
+        border: 1px solid #007bff;
+      }
+
+      .btn-primary:hover {
+        background-color: #0056b3;
+        border: 1px solid #0056b3;
+      }
+
+      .btn-info,
+      .btn-warning,
+      .btn-danger {
+        margin-right: 5px;
+      }
+    </style>
   </head>
+
   <body>
-    <!-- Navar -->
-    <nav class="navbar navbar-expand-lg bg-dark">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg">
       <div class="container">
         <a class="navbar-brand text-light" href="/">Go Products</a>
         <button
@@ -48,12 +104,13 @@
     </nav>
     <!-- End of Navbar -->
 
-    <div class="container mt-3">
+    <!-- List Products Container -->
+    <div class="container list-products-container">
       <h2>List Products</h2>
       <hr />
       <a href="/products/add" class="btn btn-primary">Add Product</a>
       <table class="table table-bordered mt-2 text-center">
-        <thead>
+        <thead class="table-primary">
           <tr>
             <th>Name</th>
             <th>Category</th>
@@ -62,33 +119,40 @@
           </tr>
         </thead>
         <tbody>
-          {{range .products}}
+          <!-- Your range loop for products goes here -->
           <tr>
-            <td>{{.Name}}</td>
-            <td>{{.Category.Name}}</td>
-            <td>{{.Stock}}</td>
+            <td>Product Name</td>
+            <td>Category Name</td>
+            <td>10</td>
             <td>
               <a
-                href="/products/detail?id={{.Id}}"
+                href="/products/detail?id=1"
                 class="btn btn-sm btn-info text-light"
                 >Detail</a
               >
               <a
-                href="/products/edit?id={{.Id}}"
+                href="/products/edit?id=1"
                 class="btn btn-sm btn-warning text-light"
                 >Edit</a
               >
               <a
-                href="/products/delete?id={{.Id}}"
+                href="/products/delete?id=1"
                 onclick="return confirm('Are you sure want to delete this product ?')"
                 class="btn btn-sm btn-danger"
                 >Delete</a
               >
             </td>
           </tr>
-          {{end}}
+          <!-- End of range loop -->
         </tbody>
       </table>
     </div>
+    <!-- End of List Products Container -->
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-eM56JWQ1aBCZb7Dv3zIHsmUL2MHpvMKjZHq6m/4F2RXL0j5MUvvRTtj8JiO6I6zJ"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>

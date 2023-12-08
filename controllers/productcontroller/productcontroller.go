@@ -55,7 +55,6 @@ func Add(w http.ResponseWriter, r *http.Request) {
 		product.Name = r.FormValue("name")
 		product.Category.Id = uint(categoryId)
 		product.Stock = int64(stock)
-		product.Description = r.FormValue("description")
 		product.CreatedAt = time.Now()
 		product.UpdatedAt = time.Now()
 
@@ -135,7 +134,6 @@ func Edit(w http.ResponseWriter, r *http.Request) {
 		product.Name = r.FormValue("name")
 		product.Category.Id = uint(categoryId)
 		product.Stock = int64(stock)
-		product.Description = r.FormValue("description")
 		product.UpdatedAt = time.Now()
 
 		if ok := productmodel.Update(id, product); !ok {

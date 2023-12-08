@@ -3,19 +3,41 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>GO Products</title>
+    <title>GO Management Products</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
       crossorigin="anonymous"
     />
+    <style>
+      .hero {
+        background-image: url("https://zenkit.com/wp-content/uploads/2019/11/Product-Management-Explained.jpg");
+        background-size: cover;
+        background-position: center;
+        color: #fff;
+        padding: 100px 0;
+        text-align: center;
+      }
+
+      .management-info {
+        background-color: #fff;
+        padding: 50px 0;
+        text-align: center;
+      }
+
+      .footer {
+        background-color: #343a40;
+        color: #fff;
+        text-align: center;
+        padding: 20px 0;
+      }
+    </style>
   </head>
   <body>
-    <!-- Navar -->
     <nav class="navbar navbar-expand-lg bg-dark">
       <div class="container">
-        <a class="navbar-brand text-light" href="/">Go Products</a>
+        <a class="navbar-brand text-light" href="/">Go Management Products</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -46,10 +68,43 @@
         </div>
       </div>
     </nav>
-    <!-- End of Navbar -->
 
-    <div class="container mt-3">
-      <h1>Hello, world!</h1>
+    <div class="hero">
+      <div class="container">
+        <h1 class="display-4">Welcome to Products Management</h1>
+        <p class="lead">
+          Efficiently manage your products and categories with our user-friendly
+          platform.
+        </p>
+      </div>
     </div>
+
+    <div class="container management-info">
+      <h2 class="mb-4">What is Products Management?</h2>
+      <p class="lead">
+        Products Management is a comprehensive solution for businesses to
+        organize, track, and optimize their product inventory. It allows you to:
+      </p>
+      <ul class="list-group list-group-flush text-start">
+        <li class="list-group-item">Add, edit, and delete products.</li>
+        <li class="list-group-item">
+          Categorize products for better organization.
+        </li>
+        <li class="list-group-item">
+          Monitor stock levels and receive low stock alerts.
+        </li>
+        <li class="list-group-item">
+          View detailed information about each product.
+        </li>
+      </ul>
+    </div>
+
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2023 Products Management. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>

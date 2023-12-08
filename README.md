@@ -32,6 +32,10 @@ Buatlah Tabel categories & products : `quernya seperti pada file table.sql`
 
 ![This is a alt text.](asset/image/products/edit-product.png "This is a sample image.")
 
+### Delete Products :
+
+![This is a alt text.](asset/image/products/delete-product.png "This is a sample image.")
+
 ### List Category :
 
 ![This is a alt text.](asset/image/category/list-category.png "This is a sample image.")
@@ -43,6 +47,10 @@ Buatlah Tabel categories & products : `quernya seperti pada file table.sql`
 ### Edit Category :
 
 ![This is a alt text.](asset/image/category/edit-category.png "This is a sample image.")
+
+### Delete Category :
+
+![This is a alt text.](asset/image/category/delete-category.png "This is a sample image.")
 
 # Sertifikat
 
